@@ -17,11 +17,11 @@ export default function MoleculeViewer() {
           width: 500,
           height: 400,
           debug: false,
-          color: "0x16171D",
+          color: "0x000000",
           use: "HTML5",
           j2sPath: "/jsmol/j2s",
-          script: "set frank off; load /jsmol/jpge/mol/12-crown-4.mol;",
-          // script: "set frank off; load /data/molecules/aspirin.asnt;",
+          script: "set frank off; load /jsmol/density/3hyd.pdb;",
+          // script: "set frank off; load /jsmol/jpge/mol/ammonia.mol; spin on;",
           readyFunction: () => setReady(true),
         };
 
