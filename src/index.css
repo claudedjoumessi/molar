@@ -54,12 +54,15 @@
 
 @layer components {
   .panel {
-    @apply w-full h-full flex items-center justify-center bg-black/75 rounded-2xl shadow-2xl;
+    @apply w-full h-full flex items-center justify-center bg-black/10 rounded-2xl shadow-2xl;
   }
 
-  canvas {
+  #moleculePanel canvas {
     outline: none;
     border: none;
-    background: red;
+  }
+
+  #moleculePanel #jsmolApplet_appletdiv img {
+    display: none;
   }
 }

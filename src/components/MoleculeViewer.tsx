@@ -14,15 +14,18 @@ export default function MoleculeViewer() {
         clearInterval(interval);
 
         const Info = {
-          width: 500,
-          height: 400,
+          width: 1200,
+          height: 650,
           debug: false,
-          color: "0x000000",
+          // color: "0x000054",
           use: "HTML5",
           j2sPath: "/jsmol/j2s",
-          script: "set frank off; load /jsmol/density/3hyd.pdb;",
-          // script: "set frank off; load /jsmol/jpge/mol/ammonia.mol; spin on;",
-          readyFunction: () => setReady(true),
+          // script: "set frank off; load /jsmol/data/acetophenone_bad.jdx;",
+          script:
+            "set frank off; background none; load /jsmol/data/2bxaH.pdb;",
+          readyFunction: () => {
+            setReady(true);
+          },
         };
 
         containerRef.current!.innerHTML = Jmol.getAppletHtml(
@@ -31,7 +34,9 @@ export default function MoleculeViewer() {
         );
         Jmol.getApplet("jsmolApplet", Info);
       }
-    }, 100);
+
+      console.log(Jmol);
+    }, 10);
 
     return () => clearInterval(interval);
   }, []);
